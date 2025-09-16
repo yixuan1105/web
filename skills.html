@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>能力特質</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="art.css">
+  
+</head>
+<body class="bg-art">
+
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-custom2">  
+    <div class="container">
+      <a class="navbar-brand text-white" href="index.html">
+                <img src="Collego_W-220.png" alt="Logo" style="width: auto; height: 30px; margin-right: 6px; vertical-align: middle;">
+                藝術學群介紹</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navArt">
+        <i class="fas fa-paintbrush"></i> <!--改導覽列按鈕（<button>）fa-palette調色盤-->
+      </button> 
+      <div class="collapse navbar-collapse" id="navArt">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="art.html">學類介紹</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="career.html">生涯進路</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="highschool.html">高中準備</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="skills.html">能力特質</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="departments.html">對應校系</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="experience.html">學類體驗</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主內容：簡介與輪播 -->
+  <div class="container py-5 text-center">
+    <h1 data-aos="zoom-in">🤹🏻‍♂️能力特質</h1>
+    <p class="mb-4">這裡是介紹多元能力和性格特質</p>
+    </div>
+  </div>
+  <div class="container my-5">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-2">
+        <a href="art.html" class="nav-icon bg-custom-1">
+          <i class="fas fa-book"></i>
+          <div>學類介紹</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="career.html" class="nav-icon bg-custom-2">
+          <i class="fas fa-road"></i>
+          <div>生涯進路</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="highschool.html" class="nav-icon bg-custom-3">
+          <i class="fas fa-graduation-cap"></i>
+          <div>高中準備</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="skills.html" class="nav-icon bg-custom-4">
+          <i class="fas fa-brain"></i>
+          <div>能力特質</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="departments.html" class="nav-icon bg-custom-5">
+          <i class="fas fa-puzzle-piece"></i>
+          <div>對應校系</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="experience.html" class="nav-icon bg-custom-6">
+          <i class="fas fa-exclamation-circle"></i>
+          <div>學類體驗</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h3 class="text-center mb-4">多元能力 - 雷達圖</h3>
+    <p class="text-center mb-4">經過多年的培養，你身上的許多能力也越來越厲害，而學類重視的能力也都不盡相同，來核對一下自己有多符合吧。</p>
+    <div class="chart-container">
+      <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+      <div class="description-box">
+        <h4>能力說明</h4>
+<div class="row">
+
+  <!-- 第一欄 -->
+  <div class="col-md-4">
+    <p><strong>遠觀細察：</strong>能在遠、近距離中能分辨、比較色彩差異，在不同光線強度下能觀察物體大小、距離、移動變化。15.00%</p>
+    <p><strong>敏銳創造：</strong>能覺察事件與觀念、理論之間的差異，並能拆解、組合、重新詮釋事物。12.06%</p>
+    <p><strong>專注力：</strong>投入心力在特定訊息及排除外部干擾。10.59%</p>
+    <p><strong>語文理解與表達：</strong>理解他人並能清楚說明想法或因果關係。6.76%</p>
+    <p><strong>自省促進：</strong>評估表現並提出改善策略。2.94%</p>
+  </div>
+
+  <!-- 第二欄 -->
+  <div class="col-md-4">
+    <p><strong>空間定向：</strong>能覺察環境、物體與自己的相對位置，想像移動或重新排列後的外觀。10.00%</p>
+    <p><strong>主動學習：</strong>積極尋求新資訊，並依據前因後果選擇學習策略。7.35%</p>
+    <p><strong>邏輯推理：</strong>掌握規律或關聯性，歸納與推演概念。6.18%</p>
+    <p><strong>批判思考：</strong>理性分析並評估不同觀點與解法。5.29%</p>
+    <p><strong>手工操作：</strong>依據物體變化快速調整肢體反應。4.41%</p>
+  </div>
+
+  <!-- 第三欄 -->
+  <div class="col-md-4">
+    <p><strong>問題解決：</strong>分析問題成因與後果，找出有效解法。5.00%</p>
+    <p><strong>快速知覺與總結：</strong>迅速覺察並整理資訊要點。3.53%</p>
+    <p><strong>批判思考：</strong>多元觀點理性分析並評估方案。5.29%</p>
+    <p><strong>問題解決：</strong>分析問題根源並設想解法與工具。5.00%</p>
+    <p><strong>邏輯推理：</strong>捕捉規律與關聯，歸納推演概念。6.18%</p>
+  </div>
+
+</div>
+
+  </div>
+    </div>
+  </div>
+  
+  <script>
+    const ctxRadar = document.getElementById('skillsRadarChart').getContext('2d');
+    const radarChart = new Chart(ctxRadar, {
+      type: 'radar',
+      data: {
+        labels: [
+          '遠觀細察', '敏銳創造', '專注力', '空間定向', '主動學習',
+          '語文理解與表達', '邏輯推理', '批判思考', '問題解決'
+        ],
+        datasets: [{
+          label: '多元能力 (%)',
+          data: [15.00, 12.06, 10.59, 10.00, 7.35, 6.76, 6.18, 5.29, 5.00],
+          backgroundColor: 'rgba(148, 97, 255, 0.3)',
+          borderColor: '#a655ff',
+          pointBackgroundColor: '#9933ff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          r: {
+            beginAtZero: true,
+            suggestedMax: 20
+          }
+        },
+        plugins: {
+          tooltip: {
+            bodyFont: { size: 16 }
+          },
+          legend: {
+            labels: { font: { size: 14 } }
+          }
+        }
+      }
+    });
+  </script>
+  
+  <div style="width: 400px; height: 400px; margin: auto;">
+  <canvas id="personalityDoughnutChart"></canvas>
+</div>
+  
+  <script>
+    const ctxDoughnut = document.getElementById('personalityDoughnutChart').getContext('2d');
+    const personalityDoughnutChart = new Chart(ctxDoughnut, {
+      type: 'doughnut',
+      data: {
+  labels: [
+    '變通開創', '主動積極', '自信肯定', '堅毅負責', '探究冒險',
+    '樂群敬業', '親和接納', '深思力行', '合作互助', '開朗活潑'
+  ],
+  datasets: [{
+    data: [20.00, 19.41, 12.94, 10.00, 8.53, 7.94, 6.76, 5.88, 4.41, 4.12],
+    backgroundColor: [
+      '#404B69', '#505E83', '#60709D', '#7F95D1', '#BF8CBD', 
+      '#DF87B3', '#FF82A9', '#FFC0BE', '#FFDAB9', '#FFE4B5'
+    ],
+    borderWidth: 1
+  }]
+},
+
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' },
+          tooltip: { bodyFont: { size: 14 } }
+        }
+      }
+    });
+  </script>
+  <div class="container my-5">
+    <h3 class="text-center mb-4">性格特質說明</h3>
+    <p class="text-center">每個人都有獨特的特質，都是顏色不一樣的煙火，而學類重視的特質，是否正好照耀了你的光彩呢，趕快來看看吧。</p>
+    
+    <div class="row">
+      <!-- 左欄 -->
+      <div class="col-md-6">
+        <p><strong>變通開創：</strong>常常對多種事物，表達熱情興趣，對於既有事物，進行拆解、重組，給予新的理解與觀點，喜愛創造出令人意想不到的新事物。20.00%</p>
+        <p><strong>主動積極：</strong>主動提出見解，樂於投入問題與活動，引領他人行動。19.41%</p>
+        <p><strong>自信肯定：</strong>相信自己能達成目標，肯定自身優勢，面對挫折能調整情緒。12.94%</p>
+        <p><strong>堅毅負責：</strong>能長時間專注投入，對承諾負責並執行到底，享受成就感。10.00%</p>
+        <p><strong>探究冒險：</strong>樂於探索未知、容忍陌生情境，將困難視為挑戰，追求成長。8.53%</p>
+      </div>
+  
+      <!-- 右欄 -->
+      <div class="col-md-6">
+        <p><strong>樂群敬業：</strong>表現活潑、主動參與活動，與夥伴合作完成任務。7.94%</p>
+        <p><strong>親和接納：</strong>關懷他人情緒，樂於照顧與接納他人，展現親和力。6.76%</p>
+        <p><strong>深思力行：</strong>追求條理秩序，行事謹慎，考量周詳。5.88%</p>
+        <p><strong>合作互助：</strong>優先關照團體與他人需求，尋求共識與合作。4.41%</p>
+        <p><strong>開朗活潑：</strong>正向樂觀看待發展，擁有接納與自在的特質。4.12%</p>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+  <script>
+ document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.nav-fade');
+  links.forEach((link, index) => {
+    setTimeout(() => {
+      link.classList.add('show');
+    }, 150 * index);
+  });
+});
+
+</script>
+</body>
+</html>

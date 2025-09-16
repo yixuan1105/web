@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藝術學群介紹</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--摺疊漢堡樣式連結-->
+    <link rel="stylesheet" href="art.css"> <!-- 外部 CSS -->
+</head>
+<body class="bg-art">
+
+    <!-- 🔹 導覽列 -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+   <div class="container">
+    <!-- 🔹 Logo & 網站名稱 -->
+    <a class="navbar-brand text-white" href="index.html">
+      <img src="Collego_W-220.png" alt="Logo" style="width: 200px; height: 40px; margin-right: 10px;">
+
+      藝術學群介紹
+    </a>
+    <!-- 🔹 漢堡選單按鈕 -->
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="fas fa-palette fs-3"></i>
+    </button>
+    <!-- 🔹 導覽選單 -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white" href="art.html">美術學類</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="design.html">商業設計學類</a></li>
+      </ul>
+
+      <!-- 登入按鈕區塊 -->
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <button class="login-btn btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+            登入 <span class="ms-1">&#x25BE;</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 🔹 登入 Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">登入</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="登入處理URL" method="POST">
+          <div class="mb-3">
+            <label for="username" class="form-label">帳號</label>
+            <input type="text" class="form-control" id="username" name="username" required placeholder="請輸入帳號">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">密碼</label>
+            <input type="password" class="form-control" id="password" name="password" required placeholder="請輸入密碼">
+          </div>
+          <button class="btn" style="background-color: #CA89A7; color: white;">登入</button>
+
+          <!-- 其他功能連結 -->
+          <div class="mt-3 text-center">
+            <a href="#" class="text-decoration-none">忘記密碼？</a> |
+            <a href="#" class="text-decoration-none">註冊新帳號</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- 🔹 主視覺區塊 -->
+    <header class="hero-section">
+        <div class="container text-center py-5">
+            <h1>探索藝術學群</h1>
+            <p>從美術、音樂到表演藝術，了解學習內容與職涯發展</p>
+
+            <!-- 🔹 輪播圖區 -->
+           <div id="artCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="2.jpg" class="carousel-img2" alt="傳統與現代油畫">
+            </div>
+            <div class="carousel-item">
+            <img src="10.jpeg" class="carousel-img2" alt="美術系">
+            </div>
+            <div class="carousel-item">
+            <img src="4.jpg" class="carousel-img2" alt="商業設計畢業展">
+            </div>
+            <div class="carousel-item">
+            <img src="1.png" class="carousel-img2" alt="商品設計畢業展">
+            </div>
+            <div class="carousel-item">
+            <img src="3.jpg" class="carousel-img2" alt="商設畢業展標語">
+            </div>
+            </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#artCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#artCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+    </header>
+
+    <!-- 🔹 學類介紹 -->
+    <section class="py-5" id="categories">
+        <div class="container">
+            <h2 class="text-center">🎨美術學類🖌️</h2>
+            <h4><strong>簡要介紹</strong></h4>
+            <p>藝術學群包括各類表達形式及創作過程的學習及賞析，結合各種特定形式來闡述人生中抽象意義層次的理念感受，運用創作者本身意識並配合各項藝術表現的基礎理論，用以詮釋生命的各種可能性。
+            </p>
+            <h4><strong>學習內容</strong></h4>
+            <p>以人文社會、哲學、史學等知識背景為核心，學習各種藝術表達的概念與創作實踐，使用各種物質媒材為基底展現藝術的表達以及創造論述。</p>
+            <h4><strong>主要學類工業設計</strong></h4>
+            <p>
+                <a href="art.html">美術</a>
+                <a href="design.html">商業設計</a>
+            </p> 
+            <div class="container my-5">
+                <h3 class="text-center">藝術學群內各學類關係空間圖⚖️</h3>
+              
+                <div class="row align-items-center">
+                  <!-- 左邊：圖片 -->
+                  <div class="col-md-7">
+                    <img src="關係圖.png" alt="藝術學群關係圖" class="img-fluid">
+                    <p class="text-center text-muted mt-2">註：紅點標示為跨學群之學類</p>
+                  </div>
+              
+                  <!-- 右邊：說明文字 -->
+                  <div class="col-md-5">
+                    <div class="p-3 bg-light rounded shadow-sm">
+                      <p>
+                        💡本學群以美術、藝術設計、表演藝術學類為學群重心。學類群聚效果明顯，如舞蹈、音樂、美術、表演藝術為一群；服裝設計、商業設計、藝術設計、藝術跨學類為一群。另工藝、工業設計等呈現分散狀態，有其獨特性。生涯志向可依據相近位置的學類納為選擇範圍。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+             <!-- 商業設計學類區塊 -->
+<div class="container">
+  <h2 class="text-center">💼商業設計學類🧠</h2>
+
+  <h4><strong>興趣類型</strong></h4>
+  <p>藝術型(A)</p>
+
+  <h4><strong>知識領域</strong></h4>
+  <p>藝術 設計 傳播媒體 歷史文化</p>
+
+  <h4><strong>核心素養</strong></h4>
+  <img src="核心素養.png" alt="核心素養雷達圖" class="img-fluid">
+  <p class="description">
+    圖表表示本學期內各核心素養之主題單元分比的平均值，加總為100%；百分比越高，代表越重要。
+  </p>
+
+  <h4><strong>重要學科</strong></h4>
+  <p>藝術 藝術生活 音樂 體育 英語文 歷史</p>
+
+  <h4><strong>加深知識</strong></h4>
+  <p>表演藝術概論 影片應用 基本設計 藝術創作 新媒體藝術 英語聽講 多媒體音樂 科技、環境與藝術 各類文學選讀</p>
+
+  <h4><strong>多元能力</strong></h4>
+  <p>藝術創意 藝術管理與基礎 主動學習 動手做 課題探索 問題解決</p>
+
+  <h4><strong>性格特質</strong></h4>
+  <p>自主性 社會責任 團隊共學</p>
+
+  <h4><strong>生涯發展</strong></h4>
+  <p>藝術 / 公關 / 設計相關職業 藝術 / 藝術相關職業 教育 / 學術 / 研究相關職業</p>
+</div>
+
+    </section>
+
+
+
+    <!-- 🔹 Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    
+</body>
+</html>

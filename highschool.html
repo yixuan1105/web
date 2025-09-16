@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高中準備</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="art.css">
+  
+</head>
+<body class="bg-art">
+
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-custom2">  
+    <div class="container">
+      <a class="navbar-brand text-white" href="index.html">
+                <img src="Collego_W-220.png" alt="Logo" style="width: auto; height: 30px; margin-right: 6px; vertical-align: middle;">
+                藝術學群介紹</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navArt">
+        <i class="fas fa-paintbrush"></i> <!--改導覽列按鈕（<button>）fa-palette調色盤-->
+      </button> 
+      <div class="collapse navbar-collapse" id="navArt">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="art.html">學類介紹</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="career.html">生涯進路</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="highschool.html">高中準備</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="skills.html">能力特質</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="departments.html">對應校系</a></li>
+          <li class="nav-item nav-fade"><a class="nav-link text-white" href="experience.html">學類體驗</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主內容：簡介與輪播 -->
+  <div class="container py-5 text-center">
+    <h1 data-aos="zoom-in">🎒高中準備</h1>
+    <p class="mb-4">這裡是介紹核心素養與高中領域課程</p>
+    </div>
+  </div>
+  <div class="container my-5">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-2">
+        <a href="art.html" class="nav-icon bg-custom-1">
+          <i class="fas fa-book"></i>
+          <div>學類介紹</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="career.html" class="nav-icon bg-custom-2">
+          <i class="fas fa-road"></i>
+          <div>生涯進路</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="highschool.html" class="nav-icon bg-custom-3">
+          <i class="fas fa-graduation-cap"></i>
+          <div>高中準備</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="skills.html" class="nav-icon bg-custom-4">
+          <i class="fas fa-brain"></i>
+          <div>能力特質</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="departments.html" class="nav-icon bg-custom-5">
+          <i class="fas fa-puzzle-piece"></i>
+          <div>對應校系</div>
+        </a>
+      </div>
+      <div class="col-6 col-md-2">
+        <a href="experience.html" class="nav-icon bg-custom-6">
+          <i class="fas fa-exclamation-circle"></i>
+          <div>學類體驗</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <body class="bg-light p-4">
+
+    <div class="container">
+      <!-- 長條圖 -->
+      <h3 class="mb-4 text-center">核心素養 - 橫向長條圖</h3>
+      <div class="card shadow-sm p-3 chart-card">
+        <div class="card-body">
+          <canvas id="barChart" height="400"></canvas>
+        </div>
+      </div>
+    
+      <!-- 圓餅圖 -->
+      <h3 class="text-center mb-4">高中課程領域 - 圓餅圖</h3>
+      <div class="card shadow-sm p-3 chart-card">
+        <div class="card-body">
+            <canvas id="pieChart" style="max-width: 400px; margin: auto;"></canvas>
+
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // 長條圖
+      const barCtx = document.getElementById('barChart').getContext('2d');
+      const barChart = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+          labels: [
+            '藝術涵養與美感素養',
+            '規劃執行與創新應變',
+            '身心素質與自我精進',
+            '系統思考與解決問題',
+            '人際關係與團隊合作',
+            '多元文化與國際理解',
+            '符號運用與溝通表達',
+            '科技資訊與媒體素養',
+            '道德實踐與公民意識'
+          ],
+          datasets: [{
+            label: '核心素養比例 (%)',
+            data: [25.00, 13.82, 13.24, 12.06, 7.94, 7.94, 7.65, 7.65, 4.71],
+            backgroundColor: '#F9729B',
+            borderRadius: 5,
+            barThickness: 12
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: {
+                font: { size: 14 }
+              }
+            },
+            y: {
+              ticks: {
+                font: { size: 14 }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                font: { size: 16 }
+              }
+            },
+            tooltip: {
+              bodyFont: { size: 14 }
+            }
+          }
+        }
+      });
+    
+      // 圓餅圖
+      const pieCtx = document.getElementById('pieChart').getContext('2d');
+      const pieChart = new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+          labels: [
+            '美術', '藝術生活', '國語文', '英語文', '歷史', '生涯規劃', '生命教育',
+            '資訊科技', '公民與社會', '音樂', '生活科技', '地理', '生物',
+            '本土語文／臺灣手語', '家政', '體育', '物理', '化學', '數學'
+          ],
+          datasets: [{
+            label: '比例 (%)',
+            data: [
+              37.94, 19.41, 9.12, 6.47, 4.71, 4.71, 3.24,
+              3.24, 2.94, 2.06, 1.76, 1.47, 0.59,
+              0.59, 0.59, 0.29, 0.29, 0.29, 0.29
+            ],
+            backgroundColor: [
+              '#4e73df', '#5a8dee', '#6b9df1', '#7cadee', '#8cbced',
+              '#9ccbed', '#addbee', '#c0e9f2', '#d1f2f6', '#e2f9fa',
+              '#f3ffff', '#ffe4e1', '#ffc1cc', '#ff9999', '#ff6f61',
+              '#ff4c4c', '#e63946', '#c1121f', '#780000'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+               responsive: true,
+               layout: {
+                  padding: 0
+                   },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                font: { size: 14 }
+              }
+            },
+            tooltip: {
+              bodyFont: { size: 14 }
+            }
+          }
+        }
+      });
+    </script>
+    <!-- 放在 Bootstrap 容器中 -->
+<div class="container my-5">
+    <h3 class="text-center mb-4">加深加廣課程 - 橫向長條圖</h3>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <canvas id="advancedChart" style="max-height: 1000px;"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const ctx = document.getElementById('advancedChart').getContext('2d');
+    const advancedChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          '新媒體藝術', '基本設計', '語文表達與傳播應用', '表演創作', '科技、環境與藝術的歷史',
+          '未來想像與生涯進路', '英語聽講', '專題閱讀與研究', '族群、性別與國家的歷史',
+          '英文閱讀與寫作', '多媒體音樂', '第二外國語文', '探究與實作：公共議題與社會探究',
+          '思考：智慧的啟航', '各類文學選讀', '探究與實作：歷史學探究', '閩南語文口語溝通與表達',
+          '探究與實作：地理與人文社會科學研究', '現代社會與經濟', '民主政治與法律', '空間資訊科技',
+          '社會環境議題', '國學常識', '英文作文', '進階程式設計', '工程設計專題', '安全教育與傷害防護'
+        ],
+        datasets: [{
+          label: '比例 (%)',
+          data: [
+            20.29, 18.82, 16.76, 6.47, 5.59, 5.00, 4.41, 3.82,
+            2.94, 2.35, 2.35, 2.35, 1.47, 1.47, 1.18, 0.88,
+            0.59, 0.59, 0.29, 0.29, 0.29, 0.29, 0.29, 0.29,
+            0.29, 0.29, 0.29
+          ],
+          backgroundColor: '#F9729B',
+          borderRadius: 5,
+          barThickness: 12
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              font: {
+                size: 14
+              }
+            }
+          },
+          y: {
+            ticks: {
+              font: {
+                size: 14
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            bodyFont: {
+              size: 14
+            }
+          }
+        }
+      }
+    });
+  </script>
+  
+    <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+  <script>
+ document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.nav-fade');
+  links.forEach((link, index) => {
+    setTimeout(() => {
+      link.classList.add('show');
+    }, 150 * index);
+  });
+});
+
+</script>
+</body>
+</html>
+
