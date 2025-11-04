@@ -17,3 +17,7 @@
   background-color: #204080 !important;
   color: #fff !important;
 }
+
+.btn btn-primary{
+  color: red;
+}

@@ -1,41 +1,61 @@
 <?php
-$pageTitle = "資管一日營報名";
-include 'header.php';
+require_once('header.php');
+$title = "資管一日營報名";
 
-// 如果尚未登入，導向登入頁並記住原本頁面
-if (!isset($_SESSION['name'])) {
-  header("Location: login.php?redirect=conference.php");
-  exit;
+// 沒登入就跳回 login
+if(!isset($_SESSION['account'])){
+    $redirect = $_SERVER['REQUEST_URI'];
+    header("Location: login.php?redirect=" . urlencode($redirect));
+    exit;
 }
+
+$name = $_SESSION['name'];
+$role = $_SESSION['role'];
 ?>
 
-<div class="container py-5">
-  <h2 class="mb-4 text-center">資管一日營報名</h2>
-
-  <form action="count.php" method="post" class="mx-auto" style="max-width: 500px;">
-    <!-- 自動填入使用者姓名與身分 -->
-    <input type="hidden" name="name" value="<?= $_SESSION['name'] ?>">
-   
+<div class="container mt-4">
+  <h2>資管一日營報名</h2>
+  <form method="post" action="">
 
     <div class="mb-3">
-      <label class="form-label">參加場次</label><br>
+      <label class="form-label">活動場次:</label><br>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="am" value="yes" id="am">
-        <label class="form-check-label" for="am">上午場（150元）</label>
+        <input class="form-check-input" type="checkbox" name="session[]" id="morning" value="morning">
+        <label class="form-check-label" for="morning">上午場 (150元)</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="pm" value="yes" id="pm">
-        <label class="form-check-label" for="pm">下午場（100元）</label>
+        <input class="form-check-input" type="checkbox" name="session[]" id="afternoon" value="afternoon">
+        <label class="form-check-label" for="afternoon">下午場 (100元)</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="lunch" value="yes" id="lunch">
-        <label class="form-check-label" for="lunch">午餐（50元）</label>
+        <input class="form-check-input" type="checkbox" name="session[]" id="lunch" value="lunch">
+        <label class="form-check-label" for="lunch">午餐 (50元)</label>
       </div>
     </div>
 
-    <input type="hidden" name="event" value="camp">
-    <button type="submit" class="btn btn-success w-100">送出報名</button>
+    <button type="submit" class="btn btn-primary">提交報名</button>
   </form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $sessions = $_POST["session"] ?? [];
+    $fee = 0;
+
+    if($role === "S"){
+        if(in_array("morning",$sessions)) $fee+=150;
+        if(in_array("afternoon",$sessions)) $fee+=100;
+        if(in_array("lunch",$sessions)) $fee+=50;
+    }
+
+    echo "<div class='alert alert-info mt-3'>";
+    if($role === "T"|| $role === "M"){
+        echo "$name ，您是老師，免費參加。";
+    }else{
+        echo "$name ，您要繳交 $fee 元。";
+    }
+    echo "</div>";
+}
+?>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include('footer.php'); ?>

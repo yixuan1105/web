@@ -1,10 +1,5 @@
-<?php
-session_start();
-if (!isset($_SESSION["account"])) {
-	header("Location: login.php");
-	exit;
-}
-?>
+<?php include('header.php'); ?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -19,9 +14,9 @@ if (!isset($_SESSION["account"])) {
 		<div class="col-md-6">
 			<div class="card shadow">
 				<div class="card-body text-center">
-					<h3 class="mb-4">歡迎，<?=htmlspecialchars($_SESSION["account"])?></h3>
-					<a href="login.php" class="btn btn-outline-primary me-2">回登入頁</a>
-					<a href="success.php" class="btn btn-primary">進入 success.php</a>
+					<h3 class="mb-4">歡迎，<?=htmlspecialchars($_SESSION["name"])?></h3>
+					<a href="logout.php" class="btn btn-outline-primary me-2">登出</a>
+					<a href="index.php" class="btn btn-primary">回首頁</a>
 				</div>
 			</div>
 		</div>
@@ -30,3 +25,5 @@ if (!isset($_SESSION["account"])) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<?php include('footer.php'); ?>

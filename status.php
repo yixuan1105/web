@@ -1,40 +1,52 @@
 <?php
+require_once('header.php');
+$title = "迎新茶會報名";
 
-$pageTitle = "迎新茶會報名";
-include 'header.php';
-
-// 如果尚未登入，導向 login.php 並記住原本頁面
-if (!isset($_SESSION['name'])) {
-  header("Location: login.php?redirect=status.php");
-  exit;
+if(!isset($_SESSION['account'])){
+    $redirect = $_SERVER['REQUEST_URI'];
+    header("Location: login.php?redirect=" . urlencode($redirect));
+    exit;
 }
+
+$name = $_SESSION['name'];
+$role = $_SESSION['role'];
 ?>
 
-<div class="container py-5">
-  <h2 class="mb-4 text-center">迎新茶會報名</h2>
-
-  <form action="count.php" method="post" class="mx-auto" style="max-width: 500px;">
-    <!-- 自動填入使用者姓名與身分 -->
-    <input type="hidden" name="name" value="<?= $_SESSION['name'] ?>">
-   
-    
-
+<div class="container mt-4">
+  <h2>迎新茶會報名</h2>
+  <form method="post" action="">
     <div class="mb-3">
-      <label class="form-label">是否需要用餐</label><br>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="meal" value="yes" required>
-        <label class="form-check-label">需要晚餐</label>
+      <label class="form-label">晚餐需求:</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="dinner" id="dinner_no" value="0" checked>
+        <label class="form-check-label" for="dinner_no">不需要晚餐</label>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="meal" value="no">
-        <label class="form-check-label">不需要晚餐</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="dinner" id="dinner_yes" value="60">
+        <label class="form-check-label" for="dinner_yes">需要晚餐 (60元)</label>
       </div>
     </div>
 
-    <input type="hidden" name="event" value="tea">
-    <button type="submit" class="btn btn-success w-100">送出報名</button>
+    <button type="submit" class="btn btn-primary">提交報名</button>
   </form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $dinner_fee = $_POST["dinner"] ?? 0;
+
+    echo "<div class='alert alert-info mt-3'>";
+    if($role === "T" || $role === "M"){
+        echo "$name ，您是老師，免費參加。";
+    }else{
+        if($dinner_fee>0){
+            echo "$name ，需要晚餐，請繳 $dinner_fee 元。";
+        }else{
+            echo "$name ，不需要晚餐，免費參加。";
+        }
+    }
+    echo "</div>";
+}
+?>
 </div>
 
-<?php include 'footer.php'; ?>
-
+<?php include('footer.php'); ?>
